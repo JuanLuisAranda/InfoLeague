@@ -1,0 +1,31 @@
+.inicio-card img {
+  overflow: hidden;
+}
+.inicio-card  {
+  background-color: #333333;
+}
+
+.inicio-card ion-card-title {
+color: rgb(86, 165, 108);
+}
+
+.inicio-card ion-card-content p {
+  color: rgb(190, 190, 190);
+}
+
+
+ion-content {
+  --ion-background-color: #333333 !important;
+  
+}
+ion-item {
+  color: rgb(190, 190, 190);
+}
+
+ion-label {
+  color: rgb(190, 190, 190);
+}
+
+ion-icon {
+  color: rgb(86, 165, 108);
+}

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ id }} favorito</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="favoritos"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <ion-item>
+      <ion-label position="floating">Equipo</ion-label>
+      <ion-input placeholder="Introduzca el nombre de tu Equipo" [(ngModel)]="favorito.name"></ion-input>
+    </ion-item>
+    <br>
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+            <ion-button (click)="saveFav()" shape="round" strong="true" color="success">
+                Guardar
+              </ion-button>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

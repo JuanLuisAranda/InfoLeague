@@ -10,8 +10,8 @@ export class EquipoService {
 
   constructor() { 
     this.equipos = [
-      { "id": 1, "name": 'Real Madrid CF', "escudo": "../../assets/teams/RMCF.png" },
-      { "id": 2, "name": 'Barcelona FC', "escudo": "../assets/teams/FCB.png" },
+      { "id": 1, "name": 'Real Madrid CF', "escudo": "../../assets/teams/RMCF.png", "estadio": "Santiago Bernabéu", "ciudad": "Madrid", "year": 1902, "ligasWin": 33 },
+      { "id": 2, "name": 'Barcelona FC', "escudo": "../assets/teams/FCB.png", "estadio": "Camp Nou", "ciudad": "Barcelona", "year": 1899, "ligasWin": 25 },
       { "id": 3, "name": 'Sevilla CF', "escudo": "../../assets/teams/SFC.png" },
       { "id": 4, "name": 'Atlético de Madrid', "escudo": "../../assets/teams/ATM.png" },
       { "id": 5, "name": 'Athletic Club de Bilbao', "escudo": "../../assets/teams/ATH.png" },
@@ -36,7 +36,8 @@ export class EquipoService {
     return this.equipos;
   }
 
-  getcar(make: string): Equipo {
-    return this.equipos.filter(e => e.name == name)[0];
+  getequipo(id: number) {
+    return this.equipos.filter(e => e.id == id)[0];
   }
+
 }

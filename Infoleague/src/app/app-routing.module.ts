@@ -26,6 +26,14 @@ const routes: Routes = [
   {
     path: 'edit/:id',
     loadChildren: () => import('./pages/edit/edit.module').then( m => m.EditPageModule)
+  },
+  {
+    path: 'modal-page',
+    loadChildren: () => import('./modal-page/modal-page.module').then( m => m.ModalPagePageModule)
+  },
+  {
+    path: 'detalles',
+    loadChildren: () => import('./pages/detalles/detalles.module').then( m => m.DetallesPageModule)
   }
 ];
 

@@ -11,12 +11,21 @@
 
 <ion-content>
   <ion-list>
-    
-    <ion-item *ngFor="let e of equipos" (click)="muestraDetalles(e.name)">
-    <img [src]="e.escudo">
-    {{ e.name }}
+    <div *ngFor="let e of equipos">
+    <ion-item (click)="muestraDetalles(e.id)">
+
+      <img [src]="e.escudo">
+      <h2>{{ e.name }}</h2>
+
     </ion-item>
-  
+    <div *ngIf="isClicked && equipos [index].id == e.id" class="detalles">
+      <h2>Estadio : {{ e.estadio }}</h2>
+      <h2>Ciudad : {{ e.ciudad }}</h2>
+      <h2>Año de Fundación : {{ e.year }}</h2>
+      <h2>Ligas Ganadas : {{ e.ligasWin }}</h2>
+    </div>
+    </div>
+
   </ion-list>
-  
+
 </ion-content>

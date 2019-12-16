@@ -26,9 +26,15 @@ Esta aplicación cuenta con un menú hamburguesa en el cual podremos navegar por
 
 ## Listado de Equipos
 
-Se muestra un listado de todos los equipos con sus respectivos escudos y en el que próximamente añadiré más funcionalidades para que muestren información de cada uno, etc.
+Se muestra un listado de todos los equipos con sus respectivos escudos.
 
 ![Captura 3](Screenshot_ionic3.png)
+
+## Listado de Equipos -- Desplegable
+
+En este desplegable se muestra el **Estadio**, la **Ciudad**, el **Año de Fundación** y las **Ligas Ganadas** de cada equipo de LaLiga.
+
+![Captura 6](Screenshot_ionic6.png)
 
 ## Favoritos
 

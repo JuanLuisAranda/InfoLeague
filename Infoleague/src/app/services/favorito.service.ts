@@ -1,27 +1,53 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 import { Favorito } from '../model/favorito';
-import { Storage } from '@ionic/storage';
+import { map } from 'rxjs/operators';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavoritoService {
 
-  favoritos: Favorito[] = [];
+  userId: string;
 
-  constructor(private storage: Storage) {
+  constructor(private db:AngularFirestore,
+    private authService: AuthService) { 
+      this.authService.getCurrentUser().subscribe(
+        data => this.userId = data.uid
+      );
+     }
 
-    this.getFavoritos().then(
-      data => this.favoritos = data == null ? [] : data)
+     public addFav(fav: Favorito): Promise<DocumentReference> {
+       return this.db.collection<Favorito>('users/' + this.userId + '/favoritos').add(fav);
+     }
 
-   }
-
-   getFavoritos(): Promise<Favorito[]> {
-    return this.storage.get('favoritos');
-    
-  }
-​
-  getFavorito(id: number): Favorito {
+     public ​getFavoritos(): Observable<Favorito[]> {
+       return this.db.collection<Favorito>('users/' + this.userId + '/favoritos').snapshotChanges()
+       .pipe(
+         map(
+           snaps => snaps.map(
+             snap => <Favorito>{
+               id: snap.payload.doc.id,
+               ...snap.payload.doc.data()
+             }
+           )
+         )
+       );
+     }
+     public deleteFavById(id: string): Promise<void> {
+      return this.db.collection('users/' + this.userId + '/favoritos').doc(id).delete();
+    }
+  
+    public getFavByID(id: string): Observable <Favorito>{
+      return this.db.collection('users/' + this.userId + '/favoritos').doc<Favorito>(id).valueChanges();
+    }
+  
+    public updateFavById(id: string, item: Favorito): Promise<void> {
+      return this.db.collection('users/' + this.userId + '/favoritos').doc(id).set(item);
+    }
+  /* getFavorito(id: number): Favorito {
     return this.favoritos.filter(f => f.id == id)[0];
   }
 
@@ -34,23 +60,11 @@ export class FavoritoService {
     }
 ​
     return this.storage.set('favoritos', this.favoritos); 
-  }
+  } */
 
-  // Añadir equipo favorito
-  addFav(f: Favorito) {
-    let id = 0;
-​
-    if (this.favoritos.length > 0) {
-      id = this.favoritos[this.favoritos.length - 1].id + 1;
-    }
-    const favToSave = {
-      id: id,
-      name: f.name.toUpperCase(),
-    };
-    this.favoritos.push(favToSave);
-  }
-​
-  // Editar equipo favorito
+  
+
+  /* // Editar equipo favorito
   updateFav(f) {
     const index = this.favoritos.findIndex(
       fAux => fAux.id == f.id
@@ -63,6 +77,6 @@ export class FavoritoService {
 ​
     this.favoritos = this.favoritos.filter(f => f.id != id);
     return this.storage.set('favoritos', this.favoritos)
-  }
+  } */
 
 }

@@ -2,34 +2,49 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
+
   {
     path: 'list',
     loadChildren: () => import('./ListaEquipos/list.module').then(m => m.ListPageModule)
   },
+
   {
     path: 'favoritos',
     loadChildren: () => import('./pages/favoritos/favoritos.module').then( m => m.FavoritosPageModule)
   },
+
   {
-    path: 'edit',
+    path: 'create-fav',
     loadChildren: () => import('./pages/edit/edit.module').then( m => m.EditPageModule)
   },
+
   {
     path: 'edit/:id',
     loadChildren: () => import('./pages/edit/edit.module').then( m => m.EditPageModule)
   },
+
   {
     path: 'modal-page',
     loadChildren: () => import('./modal-page/modal-page.module').then( m => m.ModalPagePageModule)
+  },
+
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'reset-password',
+    loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
   },
   
 ];

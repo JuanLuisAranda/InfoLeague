@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="title">Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+
+    <ion-row>
+    <ion-col text-center>
+      <ion-icon name="contact" class="person"></ion-icon>
+    </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center>
+        Correo electrónico
+      </ion-col>
+    </ion-row>
+
+      <ion-row>
+        <ion-item>
+          <ion-input text-center clearInput class="text" [(ngModel)]="email"></ion-input>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          Contraseña
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-item>
+          <ion-input type="password" text-center clearInput class="text" [(ngModel)]="password"></ion-input>
+        </ion-item>
+      </ion-row>
+
+  </ion-grid>
+  
+  <ion-button expand="block"
+  class="text capitalice"
+  color="success"
+  shape="round" 
+  (click)="login()">Aceptar</ion-button>
+
+  <br>
+  <div class="text center">
+    <a href="/register"><ion-icon name="person-add"></ion-icon>Crear una cuenta</a>
+  </div>
+  <div class="text center">
+    <a href="/reset-password"><ion-icon name="mail"></ion-icon>Recuperar contraseña</a>
+  </div>
+  
+
+</ion-content>

@@ -10,9 +10,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EditPage implements OnInit {
 
+  pageTitle: string = "Nuevo equipo"
   favorito: Favorito = {
-    name: ''
+    name: '', colorprincipal: '', jugadores: 0, puntos: 0
   };
+  action: string = "Guardar";
+  id: string;
 
   constructor(
     private favoritosService: FavoritoService,
@@ -20,21 +23,26 @@ export class EditPage implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-
-    console.log(this.favorito.name);
-
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    if (id != null) {
-      this.favorito = this.favoritosService.getFavorito(+id);
-    } 
-    console.log(this.favoritosService.favoritos);
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    if (this.id != null) {
+      this.favoritosService.getFavByID(this.id).subscribe(
+        data => {
+          this.favorito = data
+          this.pageTitle = "Editar equipo"
+          this.action = "Actualizar"
+        }
+      )
+    }
   }
 
 
-  saveFav() {
-    this.favoritosService.saveFav(this.favorito).then(
-      () => this.router.navigateByUrl(`/favoritos`)
-    );
+  addFav() {
+    if (this.action == "Guardar") {
+      this.favoritosService.addFav(this.favorito);
+    } else {
+      this.favoritosService.updateFavById(this.id, this.favorito)
     }
+    this.router.navigateByUrl(`/favoritos`)
+  }
 
 }

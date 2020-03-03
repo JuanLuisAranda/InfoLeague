@@ -1,25 +1,30 @@
 <ion-menu side="end" menuId="main-menu" contentId="main">
   <ion-header>
-    <ion-toolbar color="warning">
+    <ion-toolbar color="success">
       <ion-title color="dark">Opciones</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
 
-      <ion-item *ngIf ="authService.getCurrentUser() | async">
+      <ion-item href="/user" *ngIf ="authService.getCurrentUser() | async">
         <ion-icon name="person" slot="start"></ion-icon>
         <ion-label>Perfil</ion-label>
       </ion-item>
 
-      <ion-item>
-        <ion-icon name="settings" slot="start"></ion-icon>
-        <ion-label>Configuración</ion-label>
+      <ion-item href="/home">
+        <ion-icon name="home" slot="start"></ion-icon>
+        <ion-label>Inicio</ion-label>
       </ion-item>
 
-      <ion-item>
-        <ion-icon name="information-circle-outline" slot="start"></ion-icon>
-        <ion-label>Ayuda</ion-label>
+      <ion-item href="/favoritos">
+        <ion-icon name="star" slot="start"></ion-icon>
+        <ion-label>¡Crea tu propia liga!</ion-label>
+      </ion-item>
+
+      <ion-item href="/list">
+        <ion-icon name="list" slot="start"></ion-icon>
+        <ion-label>Lista Equipos</ion-label>
       </ion-item>
 
       <ion-item *ngIf ="authService.getCurrentUser() | async"

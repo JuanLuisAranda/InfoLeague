@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>{{ id }} favorito</ion-title>
+  <ion-toolbar color="success">
+    <ion-title color="dark">Favorito</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="favoritos"></ion-back-button>
+      <ion-back-button color="dark" defaultHref="favoritos"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +12,21 @@
     <ion-item>
       <ion-label position="floating">Equipo</ion-label>
       <ion-input placeholder="Introduzca el nombre de tu Equipo" [(ngModel)]="favorito.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Color</ion-label>
+      <ion-input placeholder="Introduzca el color principal de tu Equipo" [(ngModel)]="favorito.colorprincipal"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Jugadores</ion-label>
+      <ion-input type="number" placeholder="Introduzca el numero de jugadores de tu Equipo" [(ngModel)]="favorito.jugadores"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Puntos</ion-label>
+      <ion-input placeholder="Introduzca los puntos de tu Equipo" [(ngModel)]="favorito.puntos"></ion-input>
     </ion-item>
     <br>
     <ion-grid>

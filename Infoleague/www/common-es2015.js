@@ -693,63 +693,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FavoritoService", function() { return FavoritoService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm2015/ionic-storage.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth.service */ "./src/app/services/auth.service.ts");
+
+
 
 
 
 let FavoritoService = class FavoritoService {
-    constructor(storage) {
-        this.storage = storage;
-        this.favoritos = [];
-        this.getFavoritos().then(data => this.favoritos = data == null ? [] : data);
+    constructor(db, authService) {
+        this.db = db;
+        this.authService = authService;
+        this.authService.getCurrentUser().subscribe(data => this.userId = data.uid);
+    }
+    addFav(fav) {
+        return this.db.collection('users/' + this.userId + '/favoritos').add(fav);
     }
     getFavoritos() {
-        return this.storage.get('favoritos');
+        return this.db.collection('users/' + this.userId + '/favoritos').snapshotChanges()
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(snaps => snaps.map(snap => (Object.assign({ id: snap.payload.doc.id }, snap.payload.doc.data())))));
     }
-    getFavorito(id) {
-        return this.favoritos.filter(f => f.id == id)[0];
+    deleteFavById(id) {
+        return this.db.collection('users/' + this.userId + '/favoritos').doc(id).delete();
     }
-    // Guardar el equipo favorito usando una promesa
-    saveFav(f) {
-        if (f.id == undefined) {
-            this.addFav(f);
-        }
-        else {
-            this.updateFav(f);
-        }
-        return this.storage.set('favoritos', this.favoritos);
+    getFavByID(id) {
+        return this.db.collection('users/' + this.userId + '/favoritos').doc(id).valueChanges();
     }
-    // Añadir equipo favorito
-    addFav(f) {
-        let id = 0;
-        if (this.favoritos.length > 0) {
-            id = this.favoritos[this.favoritos.length - 1].id + 1;
-        }
-        const favToSave = {
-            id: id,
-            name: f.name.toUpperCase(),
-        };
-        this.favoritos.push(favToSave);
-    }
-    // Editar equipo favorito
-    updateFav(f) {
-        const index = this.favoritos.findIndex(fAux => fAux.id == f.id);
-        this.favoritos[index].name = f.name;
-    }
-    // Eliminar equipo favorito
-    deleteFav(id) {
-        this.favoritos = this.favoritos.filter(f => f.id != id);
-        return this.storage.set('favoritos', this.favoritos);
+    updateFavById(id, item) {
+        return this.db.collection('users/' + this.userId + '/favoritos').doc(id).set(item);
     }
 };
 FavoritoService.ctorParameters = () => [
-    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"] }
+    { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] },
+    { type: _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] }
 ];
 FavoritoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"],
+        _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]])
 ], FavoritoService);
 
 

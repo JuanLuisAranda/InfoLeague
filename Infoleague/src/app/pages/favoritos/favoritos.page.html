@@ -1,11 +1,11 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Favoritos</ion-title>
+    <ion-title color="dark">Favoritos</ion-title>
     <ion-buttons slot="end" padding>
-      <ion-button (click)="addFav()">
+      <ion-button color="dark" (click)="addFav()">
         <ion-icon slot="icon-only" name="add"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -17,12 +17,14 @@
     <p>¡Añade aquí a tus equipos favoritos!</p>
     <ion-list>
       <ion-item *ngFor="let f of favoritos | async">
-        <ion-label>{{ f.name }}</ion-label>
+        <ion-label>Nombre: {{ f.name }} Color: {{ f.colorprincipal }} Nº Jugadores: {{ f.jugadores }} Puntos: {{ f.puntos }}</ion-label>
         <ion-icon
+          color="warning"
           name="create"
           (click)="goEditFav(f.id)">
         </ion-icon>
-        <ion-icon 
+        <ion-icon
+        color="danger" 
         name="trash" 
         (click)="presentAlertConfirm(f.id, f.name)">
         </ion-icon>

@@ -1,5 +1,7 @@
 {
   "name": "Infoleague",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

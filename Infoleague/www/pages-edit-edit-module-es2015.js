@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>{{ id }} favorito</ion-title>\n    <ion-buttons slot=\"start\">\n      <ion-back-button defaultHref=\"favoritos\"></ion-back-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <div padding>\n    <ion-item>\n      <ion-label position=\"floating\">Equipo</ion-label>\n      <ion-input placeholder=\"Introduzca el nombre de tu Equipo\" [(ngModel)]=\"favorito.name\"></ion-input>\n    </ion-item>\n    <br>\n    <ion-grid>\n      <ion-row>\n        <ion-col></ion-col>\n        <ion-col>\n            <ion-button (click)=\"saveFav()\" shape=\"round\" strong=\"true\" color=\"success\">\n                Guardar\n              </ion-button>\n        </ion-col>\n        <ion-col></ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"success\">\n    <ion-title color=\"dark\">Favorito</ion-title>\n    <ion-buttons slot=\"start\">\n      <ion-back-button color=\"dark\" defaultHref=\"favoritos\"></ion-back-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <div padding>\n    <ion-item>\n      <ion-label position=\"floating\">Equipo</ion-label>\n      <ion-input placeholder=\"Introduzca el nombre de tu Equipo\" [(ngModel)]=\"favorito.name\"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label position=\"floating\">Color</ion-label>\n      <ion-input placeholder=\"Introduzca el color principal de tu Equipo\" [(ngModel)]=\"favorito.colorprincipal\"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label position=\"floating\">Jugadores</ion-label>\n      <ion-input type=\"number\" placeholder=\"Introduzca el numero de jugadores de tu Equipo\" [(ngModel)]=\"favorito.jugadores\"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label position=\"floating\">Puntos</ion-label>\n      <ion-input placeholder=\"Introduzca los puntos de tu Equipo\" [(ngModel)]=\"favorito.puntos\"></ion-input>\n    </ion-item>\n    <br>\n    <ion-grid>\n      <ion-row>\n        <ion-col></ion-col>\n        <ion-col>\n            <ion-button (click)=\"addFav()\" shape=\"round\" strong=\"true\" color=\"success\">\n                Guardar\n              </ion-button>\n        </ion-col>\n        <ion-col></ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n</ion-content>\n"
 
 /***/ }),
 
@@ -124,20 +124,30 @@ let EditPage = class EditPage {
         this.favoritosService = favoritosService;
         this.router = router;
         this.activatedRoute = activatedRoute;
+        this.pageTitle = "Nuevo equipo";
         this.favorito = {
-            name: ''
+            name: '', colorprincipal: '', jugadores: 0, puntos: 0
         };
+        this.action = "Guardar";
     }
     ngOnInit() {
-        console.log(this.favorito.name);
-        const id = this.activatedRoute.snapshot.paramMap.get('id');
-        if (id != null) {
-            this.favorito = this.favoritosService.getFavorito(+id);
+        this.id = this.activatedRoute.snapshot.paramMap.get('id');
+        if (this.id != null) {
+            this.favoritosService.getFavByID(this.id).subscribe(data => {
+                this.favorito = data;
+                this.pageTitle = "Editar equipo";
+                this.action = "Actualizar";
+            });
         }
-        console.log(this.favoritosService.favoritos);
     }
-    saveFav() {
-        this.favoritosService.saveFav(this.favorito).then(() => this.router.navigateByUrl(`/favoritos`));
+    addFav() {
+        if (this.action == "Guardar") {
+            this.favoritosService.addFav(this.favorito);
+        }
+        else {
+            this.favoritosService.updateFavById(this.id, this.favorito);
+        }
+        this.router.navigateByUrl(`/favoritos`);
     }
 };
 EditPage.ctorParameters = () => [

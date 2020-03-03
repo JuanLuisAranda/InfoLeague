@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Favoritos</ion-title>\n    <ion-buttons slot=\"end\" padding>\n      <ion-button (click)=\"goEditFav()\">\n        <ion-icon slot=\"icon-only\" name=\"add\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"contenido\">\n  <div class=\"ion-padding\">\n    <p>¡Añade aquí a tus equipos favoritos!</p>\n    <ion-list>\n      <ion-item *ngFor=\"let f of favoritos\">\n        <ion-label>{{ f.name }}</ion-label>\n        <ion-icon\n          name=\"create\"\n          (click)=\"goEditFav(f.id)\">\n        </ion-icon>\n        <ion-icon \n        name=\"trash\" \n        (click)=\"presentAlertConfirm(f.id, f.name)\">\n        </ion-icon>\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"success\">\n    <ion-buttons slot=\"start\">\n      <ion-menu-button color=\"dark\"></ion-menu-button>\n    </ion-buttons>\n    <ion-title color=\"dark\">Favoritos</ion-title>\n    <ion-buttons slot=\"end\" padding>\n      <ion-button color=\"dark\" (click)=\"addFav()\">\n        <ion-icon slot=\"icon-only\" name=\"add\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"contenido\">\n  <div class=\"ion-padding\">\n    <p>¡Añade aquí a tus equipos favoritos!</p>\n    <ion-list>\n      <ion-item *ngFor=\"let f of favoritos | async\">\n        <ion-label>Nombre: {{ f.name }} Color: {{ f.colorprincipal }} Nº Jugadores: {{ f.jugadores }} Puntos: {{ f.puntos }}</ion-label>\n        <ion-icon\n          color=\"warning\"\n          name=\"create\"\n          (click)=\"goEditFav(f.id)\">\n        </ion-icon>\n        <ion-icon\n        color=\"danger\" \n        name=\"trash\" \n        (click)=\"presentAlertConfirm(f.id, f.name)\">\n        </ion-icon>\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>"
 
 /***/ }),
 
@@ -122,39 +122,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_favorito_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/favorito.service */ "./src/app/services/favorito.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+
 
 
 
 
 
 var FavoritosPage = /** @class */ (function () {
-    function FavoritosPage(favoritoService, router, alertController) {
+    function FavoritosPage(favoritoService, router, authService, alertController) {
         this.favoritoService = favoritoService;
         this.router = router;
+        this.authService = authService;
         this.alertController = alertController;
-        this.favoritos = [];
     }
     FavoritosPage.prototype.ngOnInit = function () {
         var _this = this;
-        this.favoritoService.getFavoritos().then(function (data) { return _this.favoritos = data; });
+        this.authService.getCurrentUser().subscribe(function (data) { return _this.favoritos = _this.favoritoService.getFavoritos(); });
         //console.log(this.favoritoService.favoritos);
         //console.log(this.favoritos);
     };
-    FavoritosPage.prototype.ionViewWillEnter = function () {
-        var _this = this;
-        this.favoritoService.getFavoritos().then(function (data) { return _this.favoritos = data; });
-        //console.log(this.favoritoService.favoritos);
-        //console.log(this.favoritos);
+    FavoritosPage.prototype.addFav = function () {
+        this.router.navigateByUrl('/create-fav');
     };
     // Ruta para la pagina de edición
     FavoritosPage.prototype.goEditFav = function (id) {
         this.router.navigateByUrl("/edit" + (id != undefined ? '/' + id : ''));
     };
     // Borrado del equipo favorito con promesa y una vez borrado se recargan los equipos favoritos
-    FavoritosPage.prototype.deleteFav = function (id) {
-        var _this = this;
-        this.favoritoService.deleteFav(id).then(function () { return _this.favoritoService.getFavoritos().then(function (data) { return _this.favoritos = data; }); });
-    };
+    /* deleteFav(id: number) {
+      this.favoritoService.deleteFav(id).then(
+      () => this.favoritoService.getFavoritos().then(
+      data => this.favoritos = data)
+      );
+    } */
     // Confirmación para borrado
     FavoritosPage.prototype.presentAlertConfirm = function (id, name) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -172,7 +173,7 @@ var FavoritosPage = /** @class */ (function () {
                                     cssClass: 'secondary'
                                 }, {
                                     text: 'Sí',
-                                    handler: function () { return _this.deleteFav(id); }
+                                    handler: function () { return _this.favoritoService.deleteFavById(id); }
                                 }
                             ]
                         })];
@@ -189,6 +190,7 @@ var FavoritosPage = /** @class */ (function () {
     FavoritosPage.ctorParameters = function () { return [
         { type: src_app_services_favorito_service__WEBPACK_IMPORTED_MODULE_2__["FavoritoService"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+        { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"] }
     ]; };
     FavoritosPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -199,6 +201,7 @@ var FavoritosPage = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_favorito_service__WEBPACK_IMPORTED_MODULE_2__["FavoritoService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"]])
     ], FavoritosPage);
     return FavoritosPage;

@@ -50,7 +50,7 @@ export class FavoritosPage implements OnInit {
   } */
 
   // Confirmación para borrado
-   async presentAlertConfirm(id: number, name: string) {
+   async presentAlertConfirm(id: string, name: string) {
     const alert = await this.alertController.create({
       header: 'Eliminar equipo favorito',
       message: `Vas a borrar tu equipo <strong>${name}</strong>, ¿Estás seguro?`,
@@ -61,7 +61,7 @@ export class FavoritosPage implements OnInit {
           cssClass: 'secondary'
         }, {
           text: 'Sí',
-          handler: () => this.favoritoService.deleteFavById
+          handler: () => this.favoritoService.deleteFavById(id)
         }
       ]
     });

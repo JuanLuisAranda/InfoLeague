@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
   async login() {
     try {
       await this.authService.login(this.email, this.password);
-      this.router.navigateByUrl('/list');
+      this.router.navigateByUrl('/home');
     } catch (error) {
       console.log(error);
       this.presentAlert();

@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>\n      Equipos\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <div *ngFor=\"let e of equipos\">\n    <ion-item (click)=\"muestraDetalles(e.id)\">\n\n      <img [src]=\"e.escudo\">\n      <h2>{{ e.name }}</h2>\n\n    </ion-item>\n    <div *ngIf=\"isClicked && equipos [index].id == e.id\" class=\"detalles\">\n      <h2>Estadio : {{ e.estadio }}</h2>\n      <h2>Ciudad : {{ e.ciudad }}</h2>\n      <h2>Año de Fundación : {{ e.year }}</h2>\n      <h2>Ligas Ganadas : {{ e.ligasWin }}</h2>\n    </div>\n    </div>\n\n  </ion-list>\n\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"success\">\n    <ion-buttons slot=\"start\">\n      <ion-menu-button color=\"dark\"></ion-menu-button>\n    </ion-buttons>\n    <ion-title color=\"dark\">\n      Equipos\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <div *ngFor=\"let e of equipos\">\n    <ion-item (click)=\"muestraDetalles(e.id)\">\n\n      <img [src]=\"e.escudo\">\n      <h2>{{ e.name }}</h2>\n\n    </ion-item>\n    <div *ngIf=\"isClicked && equipos [index].id == e.id\" class=\"detalles\">\n      <h2>Estadio : {{ e.estadio }}</h2>\n      <h2>Ciudad : {{ e.ciudad }}</h2>\n      <h2>Año de Fundación : {{ e.year }}</h2>\n      <h2>Ligas Ganadas : {{ e.ligasWin }}</h2>\n    </div>\n    </div>\n\n  </ion-list>\n\n</ion-content>"
 
 /***/ }),
 

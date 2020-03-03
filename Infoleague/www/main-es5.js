@@ -447,7 +447,7 @@ module.exports = webpackAsyncContext;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\n  <ion-split-pane contentId=\"main-content\">\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\n      <ion-header>\n        <ion-toolbar>\n          <ion-title>Menu</ion-title>\n        </ion-toolbar>\n      </ion-header>\n      <ion-content>\n        <ion-list>\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages\">\n            <ion-item [routerDirection]=\"'root'\" [routerLink]=\"[p.url]\">\n              <ion-icon slot=\"start\" [name]=\"p.icon\"></ion-icon>\n              <ion-label>\n                {{p.title}}\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n      </ion-content>\n    </ion-menu>\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>\n"
+module.exports = "<ion-app>\n  <app-menu color=\"success\"></app-menu>\n\n    <ion-router-outlet id=\"main\"></ion-router-outlet>\n</ion-app>\n"
 
 /***/ }),
 
@@ -458,7 +458,7 @@ module.exports = "<ion-app>\n  <ion-split-pane contentId=\"main-content\">\n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-menu side=\"end\" menuId=\"main-menu\" contentId=\"main\">\n  <ion-header>\n    <ion-toolbar color=\"warning\">\n      <ion-title color=\"dark\">Opciones</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n\n      <ion-item *ngIf =\"authService.getCurrentUser() | async\">\n        <ion-icon name=\"person\" slot=\"start\"></ion-icon>\n        <ion-label>Perfil</ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-icon name=\"settings\" slot=\"start\"></ion-icon>\n        <ion-label>Configuración</ion-label>\n      </ion-item>\n\n      <ion-item>\n        <ion-icon name=\"information-circle-outline\" slot=\"start\"></ion-icon>\n        <ion-label>Ayuda</ion-label>\n      </ion-item>\n\n      <ion-item *ngIf =\"authService.getCurrentUser() | async\"\n                (click)=\"logout()\">\n        <ion-icon  name=\"exit\" slot=\"start\"></ion-icon>\n        <ion-label>Salir de la cuenta</ion-label>\n      </ion-item>\n\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n"
+module.exports = "<ion-menu side=\"end\" menuId=\"main-menu\" contentId=\"main\">\n  <ion-header>\n    <ion-toolbar color=\"success\">\n      <ion-title color=\"dark\">Opciones</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n\n      <ion-item href=\"/user\" *ngIf =\"authService.getCurrentUser() | async\">\n        <ion-icon name=\"person\" slot=\"start\"></ion-icon>\n        <ion-label>Perfil</ion-label>\n      </ion-item>\n\n      <ion-item href=\"/home\">\n        <ion-icon name=\"home\" slot=\"start\"></ion-icon>\n        <ion-label>Inicio</ion-label>\n      </ion-item>\n\n      <ion-item href=\"/favoritos\">\n        <ion-icon name=\"star\" slot=\"start\"></ion-icon>\n        <ion-label>¡Crea tu propia liga!</ion-label>\n      </ion-item>\n\n      <ion-item href=\"/list\">\n        <ion-icon name=\"list\" slot=\"start\"></ion-icon>\n        <ion-label>Lista Equipos</ion-label>\n      </ion-item>\n\n      <ion-item *ngIf =\"authService.getCurrentUser() | async\"\n                (click)=\"logout()\">\n        <ion-icon  name=\"exit\" slot=\"start\"></ion-icon>\n        <ion-label>Salir de la cuenta</ion-label>\n      </ion-item>\n\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n"
 
 /***/ }),
 
@@ -475,19 +475,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_fire_auth_guard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/auth-guard */ "./node_modules/@angular/fire/auth-guard/index.js");
+
 
 
 
 var routes = [
-    {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-    },
-    {
-        path: 'home',
-        loadChildren: function () { return __webpack_require__.e(/*! import() | home-home-module */ "home-home-module").then(__webpack_require__.bind(null, /*! ./home/home.module */ "./src/app/home/home.module.ts")).then(function (m) { return m.HomePageModule; }); }
-    },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({ path: 'home', loadChildren: function () { return __webpack_require__.e(/*! import() | home-home-module */ "home-home-module").then(__webpack_require__.bind(null, /*! ./home/home.module */ "./src/app/home/home.module.ts")).then(function (m) { return m.HomePageModule; }); } }, Object(_angular_fire_auth_guard__WEBPACK_IMPORTED_MODULE_3__["canActivate"])(Object(_angular_fire_auth_guard__WEBPACK_IMPORTED_MODULE_3__["redirectUnauthorizedTo"])(['login']))),
     {
         path: 'list',
         loadChildren: function () { return __webpack_require__.e(/*! import() | ListaEquipos-list-module */ "ListaEquipos-list-module").then(__webpack_require__.bind(null, /*! ./ListaEquipos/list.module */ "./src/app/ListaEquipos/list.module.ts")).then(function (m) { return m.ListPageModule; }); }
@@ -497,7 +492,7 @@ var routes = [
         loadChildren: function () { return Promise.all(/*! import() | pages-favoritos-favoritos-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-favoritos-favoritos-module")]).then(__webpack_require__.bind(null, /*! ./pages/favoritos/favoritos.module */ "./src/app/pages/favoritos/favoritos.module.ts")).then(function (m) { return m.FavoritosPageModule; }); }
     },
     {
-        path: 'edit',
+        path: 'create-fav',
         loadChildren: function () { return Promise.all(/*! import() | pages-edit-edit-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-edit-edit-module")]).then(__webpack_require__.bind(null, /*! ./pages/edit/edit.module */ "./src/app/pages/edit/edit.module.ts")).then(function (m) { return m.EditPageModule; }); }
     },
     {
@@ -509,8 +504,20 @@ var routes = [
         loadChildren: function () { return __webpack_require__.e(/*! import() | modal-page-modal-page-module */ "modal-page-modal-page-module").then(__webpack_require__.bind(null, /*! ./modal-page/modal-page.module */ "./src/app/modal-page/modal-page.module.ts")).then(function (m) { return m.ModalPagePageModule; }); }
     },
     {
+        path: 'login',
+        loadChildren: function () { return __webpack_require__.e(/*! import() | pages-login-login-module */ "pages-login-login-module").then(__webpack_require__.bind(null, /*! ./pages/login/login.module */ "./src/app/pages/login/login.module.ts")).then(function (m) { return m.LoginPageModule; }); }
+    },
+    {
         path: 'register',
         loadChildren: function () { return __webpack_require__.e(/*! import() | pages-register-register-module */ "pages-register-register-module").then(__webpack_require__.bind(null, /*! ./pages/register/register.module */ "./src/app/pages/register/register.module.ts")).then(function (m) { return m.RegisterPageModule; }); }
+    },
+    {
+        path: 'reset-password',
+        loadChildren: function () { return __webpack_require__.e(/*! import() | reset-password-reset-password-module */ "reset-password-reset-password-module").then(__webpack_require__.bind(null, /*! ./reset-password/reset-password.module */ "./src/app/reset-password/reset-password.module.ts")).then(function (m) { return m.ResetPasswordPageModule; }); }
+    },
+    {
+        path: 'user',
+        loadChildren: function () { return __webpack_require__.e(/*! import() | pages-user-user-module */ "pages-user-user-module").then(__webpack_require__.bind(null, /*! ./pages/user/user.module */ "./src/app/pages/user/user.module.ts")).then(function (m) { return m.UserPageModule; }); }
     },
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -567,23 +574,6 @@ var AppComponent = /** @class */ (function () {
         this.platform = platform;
         this.splashScreen = splashScreen;
         this.statusBar = statusBar;
-        this.appPages = [
-            {
-                title: 'Inicio',
-                url: '/home',
-                icon: 'home'
-            },
-            {
-                title: 'Lista Equipos',
-                url: '/list',
-                icon: 'list'
-            },
-            {
-                title: 'Favoritos',
-                url: '/favoritos',
-                icon: 'star'
-            }
-        ];
         this.initializeApp();
     }
     AppComponent.prototype.initializeApp = function () {
@@ -635,10 +625,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
-/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
-/* harmony import */ var _angular_fire_auth_guard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/fire/auth-guard */ "./node_modules/@angular/fire/auth-guard/index.js");
-/* harmony import */ var _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/menu/menu.component */ "./src/app/components/menu/menu.component.ts");
+/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+/* harmony import */ var _angular_fire_auth_guard__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/fire/auth-guard */ "./node_modules/@angular/fire/auth-guard/index.js");
+/* harmony import */ var _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/menu/menu.component */ "./src/app/components/menu/menu.component.ts");
+
+
 
 
 
@@ -658,21 +652,22 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_13__["MenuComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_15__["MenuComponent"]],
             entryComponents: [],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
                 _ionic_storage__WEBPACK_IMPORTED_MODULE_9__["IonicStorageModule"].forRoot(),
-                _angular_fire_auth__WEBPACK_IMPORTED_MODULE_11__["AngularFireAuthModule"],
-                _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_10__["AngularFirestoreModule"].enablePersistence(),
+                _angular_fire_auth__WEBPACK_IMPORTED_MODULE_13__["AngularFireAuthModule"],
+                _angular_fire__WEBPACK_IMPORTED_MODULE_10__["AngularFireModule"].initializeApp(src_environments_environment__WEBPACK_IMPORTED_MODULE_12__["environment"].firebaseConfig),
+                _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_11__["AngularFirestoreModule"].enablePersistence(),
             ],
             providers: [
                 _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
                 _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] },
-                _angular_fire_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AngularFireAuthGuard"]
+                _angular_fire_auth_guard__WEBPACK_IMPORTED_MODULE_14__["AngularFireAuthGuard"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
@@ -691,7 +686,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbWVudS9tZW51LmNvbXBvbmVudC5zY3NzIn0= */"
+module.exports = "ion-item {\n  color: #5dbd6d;\n}\n\nion-icon {\n  color: #5dbd6d;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZW51L0M6XFxVc2Vyc1xcQVxcRG9jdW1lbnRzXFxpb25pY1xcSW5mb2xlYWd1ZS9zcmNcXGFwcFxcY29tcG9uZW50c1xcbWVudVxcbWVudS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9tZW51L21lbnUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFBO0FDQ0o7O0FERUE7RUFDSSxjQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL21lbnUvbWVudS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1pdGVte1xyXG4gICAgY29sb3I6ICM1ZGJkNmRcclxufVxyXG5cclxuaW9uLWljb257XHJcbiAgICBjb2xvcjogIzVkYmQ2ZFxyXG59IiwiaW9uLWl0ZW0ge1xuICBjb2xvcjogIzVkYmQ2ZDtcbn1cblxuaW9uLWljb24ge1xuICBjb2xvcjogIzVkYmQ2ZDtcbn0iXX0= */"
 
 /***/ }),
 
@@ -802,7 +797,16 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    production: false
+    production: false,
+    firebaseConfig: {
+        apiKey: "AIzaSyDs4Q5224ddUq7oBzuu4Rpoc3tj0isoIgo",
+        authDomain: "infoleague-34c97.firebaseapp.com",
+        databaseURL: "https://infoleague-34c97.firebaseio.com",
+        projectId: "infoleague-34c97",
+        storageBucket: "infoleague-34c97.appspot.com",
+        messagingSenderId: "621721408116",
+        appId: "1:621721408116:web:0455ca6446173ee4ac3721"
+    }
 };
 /*
  * For easier debugging in development mode, you can import the following file

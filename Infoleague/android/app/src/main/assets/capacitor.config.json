@@ -1,0 +1,8 @@
+{
+  "appId": "com.ionic.infoleague",
+  "appName": "InfoLeague",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

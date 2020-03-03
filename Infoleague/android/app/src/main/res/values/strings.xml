@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">InfoLeague</string>
+    <string name="title_activity_main">InfoLeague</string>
+    <string name="package_name">com.ionic.infoleague</string>
+    <string name="custom_url_scheme">com.ionic.infoleague</string>
+</resources>

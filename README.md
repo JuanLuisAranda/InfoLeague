@@ -20,7 +20,7 @@ Esta sería la pagina principal de la aplicación, la cual te da la bienvenida y
 
 ## Menú
 
-Esta aplicación cuenta con un menú hamburguesa en el cual podremos navegar por las diferentes páginas que tiene la aplicación.
+Esta aplicación cuenta con un menú en el cual podremos navegar por las diferentes páginas que tiene la aplicación.
 
 ![Captura 2](Screenshot_ionic2.png)
 
@@ -36,9 +36,9 @@ En este desplegable se muestra el **Estadio**, la **Ciudad**, el **Año de Funda
 
 ![Captura 6](Screenshot_ionic6.png)
 
-## Favoritos
+## Crea tu liga
 
-Sobre esta página muestra, al estilo lista de tareas, una lista de los equipos que hayas añadido como favorito escribiéndolos manualmente. Esto es lo que me gustaría corregir para la siguiente versión la cual los podrías añadir pulsando un botón en la propia lista de equipos o con un desplegable en la página favoritos.
+Sobre esta página muestra, una lista de los equipos que hayas añadido escribiéndolos manualmente en el cual, introduces los datos solicitados y en un futuro me gustaría que funcionase como si de una liga se tratase, es decir, que si un equipo tiene más puntos que otro, se colocase por encima de dicho equipo.
 
 Cada equipo añadido cuenta con un botón editar y otro de borrado.
 

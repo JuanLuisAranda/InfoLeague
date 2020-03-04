@@ -28,7 +28,7 @@ Esta aplicación cuenta con un menú en el cual podremos navegar por las diferen
 
 Se muestra un listado de todos los equipos con sus respectivos escudos.
 
-![Captura 3](Screenshot_ionic3.png)
+![Captura 3](listado_equipos.png)
 
 ## Listado de Equipos -- Desplegable
 

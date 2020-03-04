@@ -10,6 +10,11 @@ Esta aplicación esta orientada al mundo deportivo, haciendo referencia a la **L
 
 Parte de la aplicación está en desarrollo y me gustaría que el usuario pudiera ver información de los equipos que compiten en esta liga haciendo click en los equipos de la lista.
 
+## Login
+
+La aplicación cuenta con un **Login** en Firebase el cual también cuenta con la función de **añadir una cuenta nueva** y **recuperar contraseña** 
+![CapturaLogin](login.png)
+
 ## Inicio
 
 Esta sería la pagina principal de la aplicación, la cual te da la bienvenida y ta proporciona dos links:

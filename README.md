@@ -22,7 +22,7 @@ Esta sería la pagina principal de la aplicación, la cual te da la bienvenida y
 
 Esta aplicación cuenta con un menú en el cual podremos navegar por las diferentes páginas que tiene la aplicación.
 
-![Captura 2](Screenshot_ionic3.png)
+![Captura 2](menu.png)
 
 ## Listado de Equipos
 

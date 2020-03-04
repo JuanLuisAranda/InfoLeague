@@ -49,3 +49,11 @@ Cada equipo añadido cuenta con un botón editar y otro de borrado.
 Y esta sería la página que nos muestra cuando pulsamos el botón de editar en el equipo añadido.
 
 ![Captura 5](Screenshot_ionic5.png)
+
+## Usuario
+
+Esta sería la sección del usuario, en la que por ahora solo tenemos una imagen por defecto, la cual puedes 'clickar' para activar la camara y capturar una foto.
+
+Cuando se añade podrás deslizar hacia la izquierda para poder borrarla y hacer otra foto.
+
+![Captura 6](usuario.png)

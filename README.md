@@ -10,9 +10,29 @@ Esta aplicación esta orientada al mundo deportivo, haciendo referencia a la **L
 
 Parte de la aplicación está en desarrollo y me gustaría que el usuario pudiera ver información de los equipos que compiten en esta liga haciendo click en los equipos de la lista.
 
+# Objetivo y público
+
+El objetivo de este aplicación es tener una información simple de los equipos de la 1ª División de España y poder crear tu propia liga.
+Es por ello que va orientada a un público al que le guste el fútbol y/o tenga pensado realizar una liga, por ejemplo, serviría para un colegio en el que se hagan ligas en el recreo, para que se puedan apuntar las diferentes clases y competir entre ellas para ver quien es finalmente el ganador de la liga.
+
+# Aspecto técnico
+
+En cuanto al aspecto más técnico de la aplicación, cuenta con un menú principal de hamburguesa en el cual se encuentran las diferentes páginas que contiene la app.
+En primer lugar se iniciará dando la bienvenida a la aplicación y dando la posibilidad de entrar sin loguearse para que el usuario sin cuenta pueda ver y observar el contenido de la aplicación pero sin realizar cambios en ella.
+
+Todo esto, estará sujeto a la base de datos de Firebase, la cual recogerá todos los equipos y jugadores que contenga la cuenta del propio usuario.
+
+Y en cuanto al aspecto estético, está realizada con un aspecto oscuro, combinando así el contraste con la información en blanco y en verde.
+
+# Medios a utilizar
+
+Para esta uplicación se van a utilizar estos medios:
+Android Studio para lanzarla en el emulador y ver el correcto funcionamiento de la cámara y otros medios que no se puedan ver en Web.
+Visual Studio para la realización del contenido de la aplicación.
+
 # Enlace del vídeo a Youtube
 
-Pincha para ver una breve explicación del funcionamiento de la aplicación.
+Pincha para ver una breve explicación del funcionamiento de la aplicación. (Versión Inicial)
 - https://youtu.be/bVeAX3MLSmc
 
 ## Login

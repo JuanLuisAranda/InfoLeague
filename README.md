@@ -6,7 +6,7 @@ Proyecto hecho en Ionic por Juan Luis Aranda Navarro, Alumno de 2º DAM
 
 Esta aplicación esta orientada al mundo deportivo, haciendo referencia a la **Liga Española de Fútbol** concretamente a la *Liga Santander*, que es la **1ª División**.
 
-El usuario puede ver información básica de los equipos y a su vez poder realizar una liga propia, con sus propios equipos y jugadores.
+El usuario puede ver información básica de los equipos y a su vez puede realizar una liga propia, con sus propios equipos y jugadores.
 
 # Objetivo y público
 

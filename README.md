@@ -27,8 +27,8 @@ Y en cuanto al aspecto estético, está realizada con un aspecto oscuro, combina
 # Medios a utilizar
 
 Para esta uplicación se van a utilizar estos medios:
-Android Studio para lanzarla en el emulador y ver el correcto funcionamiento de la cámara y otros medios que no se puedan ver en Web.
-Visual Studio para la realización del contenido de la aplicación.
+- Android Studio para lanzarla en el emulador y ver el correcto funcionamiento de la cámara y otros medios que no se puedan ver en Web.
+- Visual Studio para la realización del contenido de la aplicación.
 
 # Enlace del vídeo a Youtube
 

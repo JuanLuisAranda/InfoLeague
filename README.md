@@ -34,6 +34,9 @@ Para esta uplicación se van a utilizar estos medios:
 Pincha para ver una breve explicación del funcionamiento de la aplicación. (Versión Inicial)
 - https://youtu.be/bVeAX3MLSmc
 
+Breve descripción de la aplicación para el proyecto final:
+- https://youtu.be/6iboFCzmeuk
+
 ## Login
 
 La aplicación cuenta con un **Login** en Firebase el cual también cuenta con la función de **añadir una cuenta nueva** y **recuperar contraseña** 

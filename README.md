@@ -7,7 +7,7 @@ Proyecto hecho en Ionic por Juan Luis Aranda Navarro, Alumno de 2º DAM
 **(27/03/2020)**
 - Intentando mejorar la página del perfil, para que aparezca el nombre, correo electrónico e información que pueda contener el usuario, como querer cambiar la contraseña, nadamás que obtenga resultados visibles los iré subiendo.
 
-**(27/03/2020)**
+**(03/04/2020)**
 
 
 # Descripción del Proyecto

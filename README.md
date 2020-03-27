@@ -7,6 +7,9 @@ Proyecto hecho en Ionic por Juan Luis Aranda Navarro, Alumno de 2º DAM
 **(27/03/2020)**
 - Intentando mejorar la página del perfil, para que aparezca el nombre, correo electrónico e información que pueda contener el usuario, como querer cambiar la contraseña, nadamás que obtenga resultados visibles los iré subiendo.
 
+**(27/03/2020)**
+
+
 # Descripción del Proyecto
 
 Esta aplicación esta orientada al mundo deportivo, haciendo referencia a la **Liga Española de Fútbol** concretamente a la *Liga Santander*, que es la **1ª División**.

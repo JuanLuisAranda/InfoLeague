@@ -4,6 +4,9 @@ Proyecto hecho en Ionic por Juan Luis Aranda Navarro, Alumno de 2º DAM
 
 # Histórico semanal
 
+**(20/03/2020)**
+- Realizado **vídeo** de presentación en YouTube del contenido de lo que será la aplicación del **proyecto final**.
+
 **(27/03/2020)**
 - Intentando mejorar la página del perfil, para que aparezca el nombre, correo electrónico e información que pueda contener el usuario, como querer cambiar la contraseña, nadamás que obtenga resultados visibles los iré subiendo.
 

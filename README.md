@@ -10,8 +10,8 @@ Proyecto hecho en Ionic por Juan Luis Aranda Navarro, Alumno de 2º DAM
 **(27/03/2020)**
 - Intentando mejorar la página del perfil, para que aparezca el nombre, correo electrónico e información que pueda contener el usuario, como querer cambiar la contraseña, nadamás que obtenga resultados visibles los iré subiendo.
 
-**(03/04/2020)**
-
+**(17/04/2020)**
+- He tocado la página del usuario para empezar a poner que aparezca su correo electónico y su nombre, para que así sea más visual, me queda pendiente coger el correo de la base de datos para mostrar de cada usuario el suyo.
 
 # Descripción del Proyecto
 

@@ -7,7 +7,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
-
 // import * as _ from 'lodash';
 
 // @Pipe({ name: 'orderby' })

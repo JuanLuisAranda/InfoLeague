@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, Injectable } from '@angular/core';
 import { Favorito } from 'src/app/model/favorito';
 import { FavoritoService } from 'src/app/services/favorito.service';
 import { Router } from '@angular/router';
@@ -7,11 +7,23 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
+// import * as _ from 'lodash';
+
+// @Pipe({ name: 'orderby' })
+
+// export class OrderByPipe {
+//   transform(array, args) {
+//     return _.sortBy(array, args);
+//   }
+// }
+
+
 @Component({
   selector: 'app-favoritos',
   templateUrl: './favoritos.page.html',
   styleUrls: ['./favoritos.page.scss'],
 })
+
 export class FavoritosPage implements OnInit {
 
   favoritos: Observable<Favorito[]>;
@@ -40,6 +52,8 @@ export class FavoritosPage implements OnInit {
       `/edit${ id != undefined ? '/' + id : ''}`
     );
   }
+  
+
 
   // Borrado del equipo favorito con promesa y una vez borrado se recargan los equipos favoritos
   /* deleteFav(id: number) {

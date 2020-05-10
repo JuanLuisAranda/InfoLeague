@@ -18,6 +18,9 @@ Proyecto hecho en Ionic por Juan Luis Aranda Navarro, Alumno de 2º DAM
 
 - También tengo pendiente agregar a la base de datos nuevos campos para el perfil de usuario y así poder mostrarlos en la página de dicho usuario. Tengo pensado añadir: Nombre (y que se pueda editar desde la propia página) , correo electronico (ya añadido), edad y la foto de perfil (ya añadido) y terminar haciendo una maquetación de todo para que quede más visual.
 
+**(11/05/2020**
+- Vídeo de la versión preliminar y apk de la aplicación añadidos.
+
 # Descripción del Proyecto
 
 Esta aplicación esta orientada al mundo deportivo, haciendo referencia a la **Liga Española de Fútbol** concretamente a la *Liga Santander*, que es la **1ª División**.

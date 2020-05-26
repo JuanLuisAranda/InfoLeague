@@ -672,7 +672,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-item {\n  color: #5dbd6d;\n}\n\nion-icon {\n  color: #5dbd6d;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZW51L0M6XFxVc2Vyc1xcQVxcRG9jdW1lbnRzXFxpb25pY1xcSW5mb2xlYWd1ZS9zcmNcXGFwcFxcY29tcG9uZW50c1xcbWVudVxcbWVudS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9tZW51L21lbnUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFBO0FDQ0o7O0FERUE7RUFDSSxjQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL21lbnUvbWVudS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1pdGVte1xyXG4gICAgY29sb3I6ICM1ZGJkNmRcclxufVxyXG5cclxuaW9uLWljb257XHJcbiAgICBjb2xvcjogIzVkYmQ2ZFxyXG59IiwiaW9uLWl0ZW0ge1xuICBjb2xvcjogIzVkYmQ2ZDtcbn1cblxuaW9uLWljb24ge1xuICBjb2xvcjogIzVkYmQ2ZDtcbn0iXX0= */"
+module.exports = "ion-item {\n  color: #5dbd6d;\n}\n\nion-icon {\n  color: #5dbd6d;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZW51L0M6XFxVc2Vyc1xcQVxcRGVza3RvcFxcMsK6IERBTVxcQURcXEluZm9MZWFndWVcXEluZm9sZWFndWUvc3JjXFxhcHBcXGNvbXBvbmVudHNcXG1lbnVcXG1lbnUuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvbWVudS9tZW51LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtBQ0NKOztBREVBO0VBQ0ksY0FBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9tZW51L21lbnUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taXRlbXtcclxuICAgIGNvbG9yOiAjNWRiZDZkXHJcbn1cclxuXHJcbmlvbi1pY29ue1xyXG4gICAgY29sb3I6ICM1ZGJkNmRcclxufSIsImlvbi1pdGVtIHtcbiAgY29sb3I6ICM1ZGJkNmQ7XG59XG5cbmlvbi1pY29uIHtcbiAgY29sb3I6ICM1ZGJkNmQ7XG59Il19 */"
 
 /***/ }),
 
@@ -837,7 +837,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\A\Documents\ionic\Infoleague\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\A\Desktop\2º DAM\AD\InfoLeague\Infoleague\src\main.ts */"./src/main.ts");
 
 
 /***/ })

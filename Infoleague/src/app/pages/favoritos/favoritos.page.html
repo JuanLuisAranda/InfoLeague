@@ -16,8 +16,8 @@
   <div class="ion-padding">
     <p>¡Añade aquí a tus equipos favoritos!</p>
     <ion-list>
-      <ion-item *ngFor="let f of favoritos | async">
-        <ion-label>Nombre: {{ f.name }} Color: {{ f.colorprincipal }} Nº Jugadores: {{ f.jugadores }} Puntos: {{ f.puntos }}</ion-label>
+      <ion-item *ngFor="let f of favoritosOrdenados">
+        <ion-label><span [ngStyle]="{'color': cambiaColor(f.colorprincipal)}">{{ f.name }}</span> {{ f.jugadores }} {{ f.puntos }}</ion-label>
         <ion-icon
           color="warning"
           name="create"

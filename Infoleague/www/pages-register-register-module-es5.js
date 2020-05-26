@@ -103,7 +103,7 @@ var RegisterPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".person {\n  font-size: 8em;\n  color: #60db74;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvcmVnaXN0ZXIvQzpcXFVzZXJzXFxBXFxEb2N1bWVudHNcXGlvbmljXFxJbmZvbGVhZ3VlL3NyY1xcYXBwXFxwYWdlc1xccmVnaXN0ZXJcXHJlZ2lzdGVyLnBhZ2Uuc2NzcyIsInNyYy9hcHAvcGFnZXMvcmVnaXN0ZXIvcmVnaXN0ZXIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLGNBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3JlZ2lzdGVyL3JlZ2lzdGVyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wZXJzb24ge1xyXG4gICAgZm9udC1zaXplOiA4ZW07XHJcbiAgICBjb2xvcjogIzYwZGI3NDtcclxufSIsIi5wZXJzb24ge1xuICBmb250LXNpemU6IDhlbTtcbiAgY29sb3I6ICM2MGRiNzQ7XG59Il19 */"
+module.exports = ".person {\n  font-size: 8em;\n  color: #60db74;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvcmVnaXN0ZXIvQzpcXFVzZXJzXFxBXFxEZXNrdG9wXFwywrogREFNXFxBRFxcSW5mb0xlYWd1ZVxcSW5mb2xlYWd1ZS9zcmNcXGFwcFxccGFnZXNcXHJlZ2lzdGVyXFxyZWdpc3Rlci5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL3JlZ2lzdGVyL3JlZ2lzdGVyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQUE7RUFDQSxjQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9yZWdpc3Rlci9yZWdpc3Rlci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucGVyc29uIHtcclxuICAgIGZvbnQtc2l6ZTogOGVtO1xyXG4gICAgY29sb3I6ICM2MGRiNzQ7XHJcbn0iLCIucGVyc29uIHtcbiAgZm9udC1zaXplOiA4ZW07XG4gIGNvbG9yOiAjNjBkYjc0O1xufSJdfQ== */"
 
 /***/ }),
 

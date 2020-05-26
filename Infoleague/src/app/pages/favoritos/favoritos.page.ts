@@ -28,6 +28,9 @@ export class FavoritosPage implements OnInit {
 
   favoritos: Observable<Favorito[]>;
 
+  favoritosOrdenados: Favorito[] = [];
+  colorNombre: String = "#FF0000";
+
   constructor(
     private favoritoService: FavoritoService,
     private router: Router,
@@ -36,8 +39,16 @@ export class FavoritosPage implements OnInit {
  
   ngOnInit() {
     this.authService.getCurrentUser().subscribe(
-      data=> this.favoritos = this.favoritoService.getFavoritos()
+      data=> {
+        this.favoritos = this.favoritoService.getFavoritos();
+        this.favoritos.subscribe(
+          arrayfav=> {
+            this.favoritosOrdenados = this.ordenaFav(arrayfav);
+          }
+        );
+      }
     );
+      
     //console.log(this.favoritoService.favoritos);
     //console.log(this.favoritos);
   }
@@ -51,6 +62,24 @@ export class FavoritosPage implements OnInit {
     this.router.navigateByUrl(
       `/edit${ id != undefined ? '/' + id : ''}`
     );
+  }
+
+  ordenaFav(f: Favorito[]): Favorito[] {
+    f.sort((a, b) => (a.puntos < b.puntos) ? 1 : -1);
+    return f;
+  }
+
+  cambiaColor(c: string): string {
+    switch (c.toLowerCase()) {
+      case "morado":
+        return "#BA00FF";
+        break;
+    
+      default:
+        break;
+    }
+
+    return ''
   }
   
 

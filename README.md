@@ -13,6 +13,14 @@ Proyecto hecho en Ionic por Juan Luis Aranda Navarro, Alumno de 2º DAM
 **(17/04/2020)**
 - He tocado la página del usuario para empezar a poner que aparezca su correo electónico y su nombre, para que así sea más visual, me queda pendiente coger el correo de la base de datos para mostrar de cada usuario el suyo.
 
+**(08/05/2020)**
+- He empezado a buscar información sobre como hacer el sistema de puntos de los equipos añadidos a tu propia liga y he estado intentándolo con un @Pipe pero no he tenido éxito y lo he dejado comentado para seguir retomándolo.
+
+- También tengo pendiente agregar a la base de datos nuevos campos para el perfil de usuario y así poder mostrarlos en la página de dicho usuario. Tengo pensado añadir: Nombre (y que se pueda editar desde la propia página) , correo electronico (ya añadido), edad y la foto de perfil (ya añadido) y terminar haciendo una maquetación de todo para que quede más visual.
+
+**(11/05/2020**
+- Vídeo de la versión preliminar y apk de la aplicación añadidos.
+
 # Descripción del Proyecto
 
 Esta aplicación esta orientada al mundo deportivo, haciendo referencia a la **Liga Española de Fútbol** concretamente a la *Liga Santander*, que es la **1ª División**.
@@ -47,6 +55,9 @@ Pincha para ver una breve explicación del funcionamiento de la aplicación. (Ve
 
 Breve descripción de la aplicación para el proyecto final:
 - https://youtu.be/6iboFCzmeuk
+
+Vídeo de la **Versión Preliminar**
+-  https://youtu.be/kwg3erAj0qY
 
 ## Login
 

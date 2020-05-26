@@ -21,6 +21,12 @@ Proyecto hecho en Ionic por Juan Luis Aranda Navarro, Alumno de 2º DAM
 **(11/05/2020**
 - Vídeo de la versión preliminar y apk de la aplicación añadidos.
 
+**(26/06/2020**
+- Cambios realizados en la página de crear tu propia liga:
+    · Ahora te ordena los equipos según la puntuación que tengan (el que tiene más puntos se coloca en primera posición y a continuación       los demás)
+    · Añadido el uso de que colorea el nombre del equipo según lo que haya escrito el usuario en el campo de 'Color Principal' de cada equipo. Por ahora, sólo lo hace con el color morado, puesto que no he añadido los demás colores.
+    · Estoy trabajando con la maquetación, tanto de esta sección, como la del perfil del usuario.
+
 # Descripción del Proyecto
 
 Esta aplicación esta orientada al mundo deportivo, haciendo referencia a la **Liga Española de Fútbol** concretamente a la *Liga Santander*, que es la **1ª División**.

@@ -74,6 +74,49 @@ export class FavoritosPage implements OnInit {
       case "morado":
         return "#BA00FF";
         break;
+        case "rojo":
+        return "#FF0000";
+        break;
+        case "naranja":
+        return "#FF8300";
+        break;
+        case "amarillo":
+        return "#FFFE00";
+        break;
+        case "verde":
+        return "#FFFE00";
+        break;
+        case "cian":
+        return "#00FFEE";
+        break;
+        case "azul cielo":
+        return "#00C3FF";
+        break;
+        case "azul":
+        return "#0000FF";
+        break;
+        case "turquesa":
+        return "#40E0D0";
+        break;
+        case "rosa":
+        return "#FE97FF";
+        break;
+        case "fucsia":
+        return "#FF00FF";
+        break;
+        case "negro":
+        return "#000000";
+        break;
+        case "blanco":
+        return "#FFFFFF";
+        break;
+        case "gris":
+        return "#808080";
+        break;
+        case "plata":
+        return "#C0C0C0";
+        break;
+        
     
       default:
         break;

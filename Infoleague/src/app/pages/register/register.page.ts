@@ -11,6 +11,7 @@ export class RegisterPage implements OnInit {
 
   email: string;
   password: string;
+  name: string;
 
   constructor(private authService: AuthService,
               private router: Router) { }

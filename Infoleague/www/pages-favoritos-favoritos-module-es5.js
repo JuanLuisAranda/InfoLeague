@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"success\">\n    <ion-buttons slot=\"start\">\n      <ion-menu-button color=\"dark\"></ion-menu-button>\n    </ion-buttons>\n    <ion-title color=\"dark\">Favoritos</ion-title>\n    <ion-buttons slot=\"end\" padding>\n      <ion-button color=\"dark\" (click)=\"addFav()\">\n        <ion-icon slot=\"icon-only\" name=\"add\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"contenido\">\n  <div class=\"ion-padding\">\n    <p>¡Añade aquí a tus equipos favoritos!</p>\n    <ion-list>\n      <ion-item *ngFor=\"let f of favoritos | async\">\n        <ion-label>Nombre: {{ f.name }} Color: {{ f.colorprincipal }} Nº Jugadores: {{ f.jugadores }} Puntos: {{ f.puntos }}</ion-label>\n        <ion-icon\n          color=\"warning\"\n          name=\"create\"\n          (click)=\"goEditFav(f.id)\">\n        </ion-icon>\n        <ion-icon\n        color=\"danger\" \n        name=\"trash\" \n        (click)=\"presentAlertConfirm(f.id, f.name)\">\n        </ion-icon>\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"success\">\n    <ion-buttons slot=\"start\">\n      <ion-menu-button color=\"dark\"></ion-menu-button>\n    </ion-buttons>\n    <ion-title color=\"dark\">Favoritos</ion-title>\n    <ion-buttons slot=\"end\" padding>\n      <ion-button color=\"dark\" (click)=\"addFav()\">\n        <ion-icon slot=\"icon-only\" name=\"add\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"contenido\">\n  <div class=\"ion-padding\">\n    <p>¡Añade aquí a tus equipos favoritos!</p>\n    <ion-list>\n      <ion-item *ngFor=\"let f of favoritosOrdenados\">\n        <ion-label><span [ngStyle]=\"{'color': cambiaColor(f.colorprincipal)}\">{{ f.name }}</span> {{ f.jugadores }} {{ f.puntos }}</ion-label>\n        <ion-icon\n          color=\"warning\"\n          name=\"create\"\n          (click)=\"goEditFav(f.id)\">\n        </ion-icon>\n        <ion-icon\n        color=\"danger\" \n        name=\"trash\" \n        (click)=\"presentAlertConfirm(f.id, f.name)\">\n        </ion-icon>\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>"
 
 /***/ }),
 
@@ -142,10 +142,17 @@ var FavoritosPage = /** @class */ (function () {
         this.router = router;
         this.authService = authService;
         this.alertController = alertController;
+        this.favoritosOrdenados = [];
+        this.colorNombre = "#FF0000";
     }
     FavoritosPage.prototype.ngOnInit = function () {
         var _this = this;
-        this.authService.getCurrentUser().subscribe(function (data) { return _this.favoritos = _this.favoritoService.getFavoritos(); });
+        this.authService.getCurrentUser().subscribe(function (data) {
+            _this.favoritos = _this.favoritoService.getFavoritos();
+            _this.favoritos.subscribe(function (arrayfav) {
+                _this.favoritosOrdenados = _this.ordenaFav(arrayfav);
+            });
+        });
         //console.log(this.favoritoService.favoritos);
         //console.log(this.favoritos);
     };
@@ -155,6 +162,62 @@ var FavoritosPage = /** @class */ (function () {
     // Ruta para la pagina de edición
     FavoritosPage.prototype.goEditFav = function (id) {
         this.router.navigateByUrl("/edit" + (id != undefined ? '/' + id : ''));
+    };
+    FavoritosPage.prototype.ordenaFav = function (f) {
+        f.sort(function (a, b) { return (a.puntos < b.puntos) ? 1 : -1; });
+        return f;
+    };
+    FavoritosPage.prototype.cambiaColor = function (c) {
+        switch (c.toLowerCase()) {
+            case "morado":
+                return "#BA00FF";
+                break;
+            case "rojo":
+                return "#FF0000";
+                break;
+            case "naranja":
+                return "#FF8300";
+                break;
+            case "amarillo":
+                return "#FFFE00";
+                break;
+            case "verde":
+                return "#FFFE00";
+                break;
+            case "cian":
+                return "#00FFEE";
+                break;
+            case "azul cielo":
+                return "#00C3FF";
+                break;
+            case "azul":
+                return "#0000FF";
+                break;
+            case "turquesa":
+                return "#40E0D0";
+                break;
+            case "rosa":
+                return "#FE97FF";
+                break;
+            case "fucsia":
+                return "#FF00FF";
+                break;
+            case "negro":
+                return "#000000";
+                break;
+            case "blanco":
+                return "#FFFFFF";
+                break;
+            case "gris":
+                return "#808080";
+                break;
+            case "plata":
+                return "#C0C0C0";
+                break;
+            default:
+                break;
+        }
+        return '';
     };
     // Borrado del equipo favorito con promesa y una vez borrado se recargan los equipos favoritos
     /* deleteFav(id: number) {

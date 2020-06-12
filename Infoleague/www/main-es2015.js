@@ -513,6 +513,10 @@ const routes = [
         path: 'user',
         loadChildren: () => __webpack_require__.e(/*! import() | pages-user-user-module */ "pages-user-user-module").then(__webpack_require__.bind(null, /*! ./pages/user/user.module */ "./src/app/pages/user/user.module.ts")).then(m => m.UserPageModule)
     },
+    {
+        path: 'contact',
+        loadChildren: () => __webpack_require__.e(/*! import() | pages-contact-contact-module */ "pages-contact-contact-module").then(__webpack_require__.bind(null, /*! ./pages/contact/contact.module */ "./src/app/pages/contact/contact.module.ts")).then(m => m.ContactPageModule)
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -620,6 +624,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/es2015/index.js");
 /* harmony import */ var _angular_fire_auth_guard__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/fire/auth-guard */ "./node_modules/@angular/fire/auth-guard/es2015/index.js");
 /* harmony import */ var _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/menu/menu.component */ "./src/app/components/menu/menu.component.ts");
+/* harmony import */ var _ionic_native_email_composer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/email-composer */ "./node_modules/@ionic-native/email-composer/index.js");
+
 
 
 
@@ -654,6 +660,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providers: [
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
+            _ionic_native_email_composer__WEBPACK_IMPORTED_MODULE_16__["EmailComposer"],
             { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] },
             _angular_fire_auth_guard__WEBPACK_IMPORTED_MODULE_14__["AngularFireAuthGuard"]
         ],

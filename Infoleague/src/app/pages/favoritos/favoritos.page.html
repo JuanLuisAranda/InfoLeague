@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-    <ion-title color="dark">Favoritos</ion-title>
+    <ion-title color="dark">Crea tu Liga</ion-title>
     <ion-buttons slot="end" padding>
       <ion-button color="dark" (click)="addFav()">
         <ion-icon slot="icon-only" name="add"></ion-icon>
@@ -14,8 +14,64 @@
 
 <ion-content class="contenido">
   <div class="ion-padding">
-    <p>¡Añade aquí a tus equipos favoritos!</p>
-    <ion-list>
+    <p>¡Añade aquí tus equipos y forma una liga!</p>
+    <ion-grid>
+      <ion-row class="ion-align-items-start">
+        <ion-col>
+          <div class="text-align: center">
+            Nombre
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="text-align: center">
+            Partidos Jugados
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="text-align: center">
+            Puntos
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-item *ngFor="let f of favoritosOrdenados">
+              <ion-label><span [ngStyle]="{'color': cambiaColor(f.colorprincipal)}">{{ f.name }}</span></ion-label>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-item *ngFor="let f of favoritosOrdenados">
+              <ion-label> {{ f.jugadores }} </ion-label>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-item *ngFor="let f of favoritosOrdenados">
+              <ion-label> {{ f.puntos }} </ion-label>
+              
+              <ion-icon
+          color="warning"
+          name="create"
+          (click)="goEditFav(f.id)">
+        </ion-icon>
+        <ion-icon
+        color="danger" 
+        name="trash" 
+        (click)="presentAlertConfirm(f.id, f.name)">
+        </ion-icon>
+            </ion-item>
+          </div>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+    
+    <!-- <ion-list>
       <ion-item *ngFor="let f of favoritosOrdenados">
         <ion-label><span [ngStyle]="{'color': cambiaColor(f.colorprincipal)}">{{ f.name }}</span> {{ f.jugadores }} {{ f.puntos }}</ion-label>
         <ion-icon
@@ -29,6 +85,6 @@
         (click)="presentAlertConfirm(f.id, f.name)">
         </ion-icon>
       </ion-item>
-    </ion-list>
+    </ion-list> -->
   </div>
 </ion-content>

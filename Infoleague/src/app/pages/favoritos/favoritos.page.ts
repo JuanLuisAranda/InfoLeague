@@ -84,7 +84,7 @@ export class FavoritosPage implements OnInit {
         return "#FFFE00";
         break;
         case "verde":
-        return "#FFFE00";
+        return "#00FF00";
         break;
         case "cian":
         return "#00FFEE";

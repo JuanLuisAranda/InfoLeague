@@ -1,7 +1,8 @@
 {
   "name": "Infoleague",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

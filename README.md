@@ -112,7 +112,7 @@ Cada equipo añadido cuenta con un botón editar y otro de borrado.
 
 Y esta sería la página que nos muestra cuando pulsamos el botón de editar en el equipo añadido.
 
-![Captura 5](Screenshot_ionic5.png)
+![Captura 5](img5.png)
 
 ## Usuario
 

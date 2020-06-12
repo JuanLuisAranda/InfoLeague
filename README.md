@@ -35,8 +35,8 @@ El usuario puede ver información básica de los equipos y a su vez puede realiz
 
 # Objetivo y público
 
-El objetivo de este aplicación es tener una información simple de los equipos de la 1ª División de España y poder crear tu propia liga.
-Es por ello que va orientada a un público al que le guste el fútbol y/o tenga pensado realizar una liga, por ejemplo, serviría para un colegio en el que se hagan ligas en el recreo, para que se puedan apuntar las diferentes clases y competir entre ellas para ver quien es finalmente el ganador de la liga.
+El objetivo de esta aplicación es tener una información simple de los equipos de la 1ª División de España y poder crear tu propia liga.
+Es por ello que va orientada a un público al que le guste el fútbol y/o tenga pensado realizar una liga, por ejemplo, serviría para un colegio en el que se hagan ligas en el recreo, para que se puedan apuntar las diferentes clases y competir entre ellas para ver quién es finalmente el ganador de la liga.
 
 # Aspecto técnico
 
@@ -51,8 +51,9 @@ Y en cuanto al aspecto estético, está realizada con un aspecto oscuro, combina
 
 Para esta uplicación se van a utilizar estos medios:
 - Android Studio para lanzarla en el emulador y ver el correcto funcionamiento de la cámara y otros medios que no se puedan ver en Web.
-- Visual Studio para la realización del contenido de la aplicación.
+- Visual Studio para la realización del contenido de la aplicación y la página web.
 - Firebase para la administración de la base de datos.
+- Inkscape para la creación de logos.
 
 # Enlace del vídeo a Youtube
 
@@ -64,6 +65,9 @@ Breve descripción de la aplicación para el proyecto final:
 
 Vídeo de la **Versión Preliminar**
 -  https://youtu.be/kwg3erAj0qY
+
+Vídeo **Versión Final**
+-  (link no disponible por el momento)
 
 ## Login
 
@@ -102,13 +106,13 @@ Sobre esta página muestra, una lista de los equipos que hayas añadido escribi�
 
 Cada equipo añadido cuenta con un botón editar y otro de borrado.
 
-![Captura 4](crea_tu_liga.png)
+![Captura 4](img4.png)
 
 ## Editar equipo
 
 Y esta sería la página que nos muestra cuando pulsamos el botón de editar en el equipo añadido.
 
-![Captura 5](Screenshot_ionic5.png)
+![Captura 5](img5.png)
 
 ## Usuario
 

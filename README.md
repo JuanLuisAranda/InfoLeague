@@ -106,7 +106,7 @@ Sobre esta página muestra, una lista de los equipos que hayas añadido escribi�
 
 Cada equipo añadido cuenta con un botón editar y otro de borrado.
 
-![Captura 4](crea_tu_liga.png)
+![Captura 4](img4.png)
 
 ## Editar equipo
 

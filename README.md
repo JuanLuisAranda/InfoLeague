@@ -51,8 +51,9 @@ Y en cuanto al aspecto estético, está realizada con un aspecto oscuro, combina
 
 Para esta uplicación se van a utilizar estos medios:
 - Android Studio para lanzarla en el emulador y ver el correcto funcionamiento de la cámara y otros medios que no se puedan ver en Web.
-- Visual Studio para la realización del contenido de la aplicación.
+- Visual Studio para la realización del contenido de la aplicación y la página web.
 - Firebase para la administración de la base de datos.
+- Inkscape para la creación de logos.
 
 # Enlace del vídeo a Youtube
 
@@ -64,6 +65,9 @@ Breve descripción de la aplicación para el proyecto final:
 
 Vídeo de la **Versión Preliminar**
 -  https://youtu.be/kwg3erAj0qY
+
+Vídeo **Versión Final**
+-  (link no disponible por el momento)
 
 ## Login
 

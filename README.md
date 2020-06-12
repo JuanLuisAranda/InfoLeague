@@ -67,7 +67,7 @@ Vídeo de la **Versión Preliminar**
 -  https://youtu.be/kwg3erAj0qY
 
 Vídeo **Versión Final**
-![YouTube](https://cdn.emojidex.com/emoji/seal/YouTube.png "YouTube")  https://youtu.be/M5OR8JC_BJU
+-  https://youtu.be/M5OR8JC_BJU
 
 ## Login
 

@@ -35,8 +35,8 @@ El usuario puede ver información básica de los equipos y a su vez puede realiz
 
 # Objetivo y público
 
-El objetivo de este aplicación es tener una información simple de los equipos de la 1ª División de España y poder crear tu propia liga.
-Es por ello que va orientada a un público al que le guste el fútbol y/o tenga pensado realizar una liga, por ejemplo, serviría para un colegio en el que se hagan ligas en el recreo, para que se puedan apuntar las diferentes clases y competir entre ellas para ver quien es finalmente el ganador de la liga.
+El objetivo de esta aplicación es tener una información simple de los equipos de la 1ª División de España y poder crear tu propia liga.
+Es por ello que va orientada a un público al que le guste el fútbol y/o tenga pensado realizar una liga, por ejemplo, serviría para un colegio en el que se hagan ligas en el recreo, para que se puedan apuntar las diferentes clases y competir entre ellas para ver quién es finalmente el ganador de la liga.
 
 # Aspecto técnico
 
